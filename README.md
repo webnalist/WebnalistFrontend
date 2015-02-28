@@ -26,4 +26,4 @@ https://webnalist.com
 ```
 
 ###WebnalistPopup
-![](https://github.com/github/webnalist/WebnalistFrontend/assets/images/WebnalistPopup.png)
+![](https://github.com/webnalist/WebnalistFrontend/blob/master/assets/images/WebnalistPopup.png)
