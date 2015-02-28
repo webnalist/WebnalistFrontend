@@ -7,7 +7,7 @@ User don't need to be logged in Merchant service.
 https://webnalist.com
 
 ###Embeding code
-At the and of your html file, before </body> ending tag.
+At the and of your html file, before *body* ending tag.
 ```js
 <script>
     (function (d, s, wn) {
@@ -28,7 +28,7 @@ At the and of your html file, before </body> ending tag.
 </script>
 ```
 
-##Optional advanced settings
+###Optional advanced settings
 ```js
 <script>
 WN.options = {
@@ -44,6 +44,8 @@ WN.options = {
 </script>
 ```
 
+###Sample html list
+Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 ```html
 <div class="demo-container>
 <!--Advanced usage-->
