@@ -18,7 +18,7 @@ At the and of your html file, before *body* ending tag.
     };
     var wns = d.createElement(s);
     wns.async = true;
-    wns.src = 'lib/webnalist.js'; //Make sure the path is correct.
+    wns.src = '../webnalist.min.js'; //Make sure the path is correct.
     wns.onload = function () {
         wn.executeReady && wn.executeReady();
     };
