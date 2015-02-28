@@ -1,10 +1,10 @@
 # WebnalistFrontend
 WebnalistFrontend Merchant Library
 
-Library for Webnalist Merchant
-
-This library enables the processing of payments WebnalistPayment using remote account model
+This library enables the processing of WebnalistPayment using remote account model.
 User don't need to be logged in Merchant service.
+
+https://webnalist.com
 
 ###Embeding code
 ```js
@@ -24,3 +24,6 @@ User don't need to be logged in Merchant service.
     tag.parentNode.insertBefore(wns, tag);
     })(document, 'script', window['WN'] || {});
 ```
+
+###WebnalistPopup
+![](https://github.com/github/webnalist/WebnalistFrontend/assets/images/WebnalistPopup.png)
