@@ -7,7 +7,9 @@ User don't need to be logged in Merchant service.
 https://webnalist.com
 
 ###Embeding code
+At the and of your html file, before </body> ending tag.
 ```js
+<script>
     (function (d, s, wn) {
         window['WN'] = wn;
         wn.readyFn = wn.readyFn || [];
@@ -23,6 +25,47 @@ https://webnalist.com
     var tag = document.getElementsByTagName("script")[0];
     tag.parentNode.insertBefore(wns, tag);
     })(document, 'script', window['WN'] || {});
+</script>
+```
+
+##Optional advanced settings
+```js
+<script>
+WN.options = {
+     readArticleUrl: 'https://webnalist.com/articles/read/confirm',
+     loadPricesUrl: 'https://webnalist.com/public/merchant/articles/prices.json',
+     articleItemSelector: '.wn-item',
+     priceSelector: '.wn-price',
+     loadingClass: 'wn-loading',
+     articleUrlAttribute: 'data-wn-url',
+     wrapperSelector: 'body',
+     loadPrices: true
+};
+</script>
+```
+
+```html
+<div class="demo-container>
+<!--Advanced usage-->
+<div class="demo-container">
+    <ul>
+        <li class="wn-item" data-wn-url="http://yourWebsite/yourArticle/1">
+            <h2>Article #1 Title</h2>
+            <p>Price: <span class="wn-price">...</span> zł</p>
+            <a href="#">Read with Webnalist &raquo;</a>
+        </li>
+        <li class="wn-item" data-wn-url="http://yourWebsite/yourArticle/2">
+            <h2>Article #2 Title</h2>
+            <p>Price: <span class="wn-price">...</span> zł</p>
+            <a href="#">Read with Webnalist &raquo;</a>
+        </li>
+    </ul>
+</div>
+
+<!--Simple usage-->
+<a href="#" class="wn-item" data-wn-url="http://yourWebsite/yourArticle/1">
+    Read with Webnalist &raquo;
+</a>
 ```
 
 ###WebnalistPopup
