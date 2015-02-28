@@ -1,3 +1,4 @@
+/* | https://webnalist.com | v1.0.0 | Copyright (c) 2015 Webnalist Sp. z o.o. All rights reserved. | */
 var WN = WN || {};
 WN = (function (window, document, app) {
     var qs = function (selector, scope) {

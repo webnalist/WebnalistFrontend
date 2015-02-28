@@ -21,7 +21,7 @@ gulp.task('js:webnalist-frontend', function () {
 
     var stream = gulp
         .src(scripts)
-        .pipe(concat('webnalist.js'));
+        .pipe(concat('webnalist.min.js'));
 
     if (config.uglifyJS === true) {
         stream.pipe(uglify({
