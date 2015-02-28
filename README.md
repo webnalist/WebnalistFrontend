@@ -6,7 +6,7 @@ User don't need to be logged in Merchant service.
 
 https://webnalist.com
 
-###Embeding code
+##Embeding code
 At the and of your html file, before *body* ending tag.
 ```js
 <script>
@@ -28,7 +28,7 @@ At the and of your html file, before *body* ending tag.
 </script>
 ```
 
-###Optional advanced settings
+##Optional advanced settings
 ```js
 <script>
 WN.options = {
@@ -44,7 +44,7 @@ WN.options = {
 </script>
 ```
 
-###Sample html list
+##Sample html list
 Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 ```html
 <!--Advanced usage-->
@@ -72,9 +72,9 @@ Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 </a>
 ```
 
-###WebnalistPopup
+##WebnalistPopup
 ![](https://github.com/webnalist/WebnalistFrontend/blob/master/assets/images/WebnalistPopup.png)
 
-## Demo page
-
+## More
+Works together with [WebnalistBackend](https://github.com/webnalist/WebnalistBackend)
 See the [Demo file](demo/index.html)
