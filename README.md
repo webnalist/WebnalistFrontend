@@ -73,4 +73,8 @@ Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 ```
 
 ###WebnalistPopup
-![](https://github.com/webnalist/WebnalistFrontend/blob/master/assets/images/WebnalistPopup.png)
+![](https://github.com/webnalist/WebnalistFrontend/blob/master/assets/images/WebnalistPopup.png = 350x)
+
+## Demo page
+
+See the [Demo file](/demo/.index.html)
