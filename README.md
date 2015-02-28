@@ -77,4 +77,4 @@ Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 
 ## Demo page
 
-See the [Demo file](/demo/.index.html)
+See the [Demo file](demo/index.html)
