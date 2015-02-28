@@ -75,6 +75,6 @@ Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 ##WebnalistPopup
 ![](https://github.com/webnalist/WebnalistFrontend/blob/master/assets/images/WebnalistPopup.png)
 
-## More
-Works together with [WebnalistBackend](https://github.com/webnalist/WebnalistBackend)
-See the [Demo file](demo/index.html)
+## References
+* Works together with [WebnalistBackend](https://github.com/webnalist/WebnalistBackend)
+* See the [Demo file](demo/index.html)
