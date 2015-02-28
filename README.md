@@ -47,7 +47,6 @@ WN.options = {
 ###Sample html list
 Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 ```html
-<div class="demo-container>
 <!--Advanced usage-->
 <div class="demo-container">
     <ul>
@@ -60,6 +59,9 @@ Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
             <h2>Article #2 Title</h2>
             <p>Price: <span class="wn-price">...</span> zł</p>
             <a href="#">Read with Webnalist &raquo;</a>
+        </li>
+        <li>
+        ...
         </li>
     </ul>
 </div>
