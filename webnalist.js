@@ -1,0 +1,2 @@
+/* | https://webnalist.com | v1.0.0 | Copyright (c) 2015 Webnalist Sp. z o.o. All rights reserved. | */
+!function(t,e){t.matches=t.matches||t[e+"MatchesSelector"]||function(t){for(var e=this,n=(e.document||e.ownerDocument).querySelectorAll(t),o=0;n[o]&&n[o]!==e;)++o;return n[o]?!0:!1},t.closest=t.closest||function(t){for(var e=this;e;){if(e.matches(t))return e;e=e.parentElement}return null}}(Element.prototype,(this.getComputedStyle&&[].join.call(getComputedStyle(document.documentElement,"")).match(/-(moz|ms|webkit)-/)||[])[1]);

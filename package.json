@@ -1,0 +1,20 @@
+{
+  "name": "WebnalistFrontend",
+  "version": "1.0.0",
+  "homepage": "https://webnalist.com",
+  "license": "Copyright (c) 2015 Webnalist Sp. z o.o. All rights reserved.",
+  "devDependencies": {
+    "gulp": "*",
+    "gulp-uglify": "*",
+    "gulp-concat": "*",
+    "gulp-header": "~1.2.2"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webnalist/WebnalistFrontend.git"
+  },
+  "dependencies": {}
+}
