@@ -67,7 +67,7 @@ WN = (function (window, document, app) {
 
     var defaults = {
             readArticleUrl: 'https://webnalist.com/articles/read/confirm',
-            loadPricesUrl: 'https://webnalist.com/publicZmerchant/articles/prices.json',
+            loadPricesUrl: 'https://webnalist.com/public/merchant/articles/prices.json',
             articleItemSelector: '.wn-item',
             priceSelector: '.wn-price',
             loadingClass: 'wn-loading',

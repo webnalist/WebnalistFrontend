@@ -36,10 +36,10 @@ WN.options = {
      loadPricesUrl: 'https://webnalist.com/public/merchant/articles/prices.json',
      articleItemSelector: '.wn-item',
      priceSelector: '.wn-price',
-     loadingClass: 'wn-loading',
+     loadingClass: 'wn-loading', //class added to wn-price during prices loading
      articleUrlAttribute: 'data-wn-url',
      wrapperSelector: 'body',
-     loadPrices: true
+     loadPrices: false //if true prices will be loading into wn-price
 };
 </script>
 ```
