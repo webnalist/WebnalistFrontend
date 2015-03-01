@@ -6,40 +6,37 @@ var gulp = require('gulp'),
     pkg = require('./package.json');
 
 var paths = {
-        src: 'src'
-    },
-    config = {
-        uglifyJS: true
-    };
+    src: 'src'
+};
 
 gulp.task('js:webnalist-frontend', function () {
     var scripts = [
-        paths.src + '/plugins/closest.legacy.js',
-        paths.src + '/plugins/ajax.js',
-        paths.src + '/webnalist.js'
-    ];
+            paths.src + '/plugins/closest.legacy.js',
+            paths.src + '/plugins/ajax.js',
+            paths.src + '/webnalist.js'
+        ],
+        banner = ['/*',
+            '<%= pkg.homepage %>',
+            'v<%= pkg.version %>',
+            '<%= pkg.license %>',
+            '*/\n'
+        ].join(' | ');
+
+    gulp
+        .src(scripts)
+        .pipe(concat('webnalist.js'))
+        .pipe(header(banner, {pkg: pkg}))
+        .pipe(gulp.dest(''));
 
     var stream = gulp
-        .src(scripts)
-        .pipe(concat('webnalist.min.js'));
-
-    if (config.uglifyJS === true) {
-        stream.pipe(uglify({
+        .src('webnalist.js')
+        .pipe(concat('webnalist.min.js'))
+        .pipe(uglify({
             mangle: true
-        }));
-    }
+        }))
+        .pipe(header(banner, {pkg: pkg}));
 
-    var banner = ['/*',
-        '<%= pkg.homepage %>',
-        'v<%= pkg.version %>',
-        '<%= pkg.license %>',
-        '*/\n'
-    ].join(' | ');
-
-    stream.pipe(header(banner, {pkg: pkg}));
-
-    return stream
-        .pipe(gulp.dest(''));
+    return stream.pipe(gulp.dest(''));
 });
 
 
