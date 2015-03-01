@@ -33,8 +33,10 @@ At the and of your html file, before `body` ending tag and after `WN.options` sc
 
 ##Public WN methods
 ```js
-WN.ready();
-WN.formatPrice();
+WN.ready(function(){
+    //some code executed on WN ready. 
+});
+WN.formatPrice(/* price */);
 WN.getArticlesPrices(); //useful at get prices for ajax loaded articles 
 ```
 
