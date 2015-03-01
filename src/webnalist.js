@@ -64,16 +64,24 @@ WN = (function (window, document, app) {
                 }
             }
             return out;
+        },
+        isObject = function (o) {
+            return o != null && typeof o === 'object' && !Array.isArray(o);
+        },
+        isPlainObject = function (o) {
+            return isObject(o) && o.constructor === Object;
         };
 
     var defaults = {
             readArticleUrl: 'https://webnalist.com/articles/read/confirm',
             loadPricesUrl: 'https://webnalist.com/public/merchant/articles/prices.json',
             articleItemSelector: '.wn-item',
+            articleItemLoadedClass: 'wn-item-loaded',
             priceSelector: '.wn-price',
             loadingClass: 'wn-loading',
             articleUrlAttribute: 'data-wn-url',
             wrapperSelector: '',
+            noPriceLabel: '--',
             loadPrices: false
         },
         options = app.options = extend(defaults, app.options || {}),
@@ -83,25 +91,28 @@ WN = (function (window, document, app) {
         options.articleItemSelector = options.wrapperSelector + ' ' + options.articleItemSelector;
     }
 
+    if (options.sandbox) {
+        var confirm = '/sandbox/confirm.php',
+            prices = '/sandbox/prices.php',
+            url = 'http://demo.webnalist.com';
+        if (isPlainObject(options.sandbox)) {
+            options.sandbox.url && (url = options.sandbox.url);
+        }
+        options.readArticleUrl = url + '/sandbox/confirm.php';
+        options.loadPricesUrl = url + '/sandbox/prices.php';
+        console.log(options.loadPricesUrl)
+    }
+
     NodeList.prototype.forEach = Array.prototype.forEach;
 
-    app.isReady = false;
-    app.readyFn = app.readyFn || [];
-    app.ready = function (fn) {
-        app.readyFn.push(fn);
-    };
-    app.executeReady = function () {
-        app.isReady = true;
-        var fns = app.readyFn,
-            i = 0,
-            max = fns.length;
-        for (; i < max; i++) {
-            var fn = fns[i];
-            if (typeof fn === "function") {
-                fn();
-            }
+    var ready = app.ready = function (fn) {
+        if (document.readyState != 'loading') {
+            fn();
+        } else {
+            document.addEventListener('DOMContentLoaded', fn);
         }
     };
+
     var _WN = window['WN'];
     app.noConflict = function () {
         if (window['WN'] === app) {
@@ -147,7 +158,7 @@ WN = (function (window, document, app) {
                 }
                 return len;
             };
-        qsa(options.articleItemSelector).forEach(function (item) {
+        qsa(options.articleItemSelector + ':not(.' + options.articleItemLoadedClass + ')').forEach(function (item) {
             var url = item.getAttribute(options.articleUrlAttribute),
                 priceItem = qs(options.priceSelector, item);
             if (url) {
@@ -170,8 +181,9 @@ WN = (function (window, document, app) {
 
     function showArticlePrices(data) {
         for (var url in data) {
-            var selector = options.wrapperSelector + ' [' + options.articleUrlAttribute + '="' + url + '"]';
-            qsa(selector).forEach(function (item) {
+            var selector = options.articleItemSelector + ' [' + options.articleUrlAttribute + '="' + url + '"]';
+            qsa(selector + ':not(.' + options.articleItemLoadedClass + ')').forEach(function (item) {
+                $addClass(item, options.articleItemLoadedClass);
                 var priceItem = qs(options.priceSelector, item);
                 if (priceItem) {
                     $html(priceItem, formatPrice(data[url] / 100));
@@ -179,8 +191,8 @@ WN = (function (window, document, app) {
                 }
             });
         }
-        qsa(options.wrapperSelector + ' .' + options.loadingClass).forEach(function (item) {
-            $html(item, '--');
+        qsa(options.articleItemSelector + ':not(.' + options.articleItemLoadedClass + ')' + ' .' + options.loadingClass).forEach(function (item) {
+            $html(item, options.noPriceLabel);
             $removeClass(item, options.loadingClass);
         });
     }
@@ -195,10 +207,10 @@ WN = (function (window, document, app) {
         return formatNumber(price, 2, 3, ' ', ',');
     }
 
-    (function init() {
+    ready(function () {
         handleArticleOnClick();
         options.loadPrices && getArticlesPrices();
-    })();
+    });
 
     return extend(app, {
         formatPrice: formatPrice,

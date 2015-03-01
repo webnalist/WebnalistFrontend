@@ -6,42 +6,35 @@ User don't need to be logged in Merchant service.
 
 https://webnalist.com
 
-##Embeding code
-At the and of your html file, before *body* ending tag.
-```js
-<script>
-    (function (d, s, wn) {
-        window['WN'] = wn;
-        wn.readyFn = wn.readyFn || [];
-        wn.ready = function (fn) {
-        wn.readyFn.push(fn);
-    };
-    var wns = d.createElement(s);
-    wns.async = true;
-    wns.src = '../webnalist.min.js'; //Make sure the path is correct.
-    wns.onload = function () {
-        wn.executeReady && wn.executeReady();
-    };
-    var tag = document.getElementsByTagName("script")[0];
-    tag.parentNode.insertBefore(wns, tag);
-    })(document, 'script', window['WN'] || {});
-</script>
-```
-
 ##Optional advanced settings
 ```js
 <script>
-WN.options = {
-     readArticleUrl: 'https://webnalist.com/articles/read/confirm',
-     loadPricesUrl: 'https://webnalist.com/public/merchant/articles/prices.json',
-     articleItemSelector: '.wn-item',
-     priceSelector: '.wn-price',
-     loadingClass: 'wn-loading', //class added to wn-price during prices loading
-     articleUrlAttribute: 'data-wn-url',
-     wrapperSelector: 'body',
-     loadPrices: false //if true prices will be loading into wn-price
-};
+    var WN = WN || {};
+    WN.options = {
+         readArticleUrl: 'https://webnalist.com/articles/read/confirm',
+         loadPricesUrl: 'https://webnalist.com/public/merchant/articles/prices.json',
+         articleItemSelector: '.wn-item',
+         articleItemLoadedClass: 'wn-item-loaded',
+         priceSelector: '.wn-price',
+         loadingClass: 'wn-loading', //class added to wn-price during prices loading
+         articleUrlAttribute: 'data-wn-url',
+         wrapperSelector: 'body',
+         noPriceLabel: '--',
+         loadPrices: false //if true prices will be loading into wn-price
+    };
 </script>
+```
+
+##Embeding code
+At the and of your html file, before *body* ending tag.
+```js
+<script src="../webnalist.min.js"></script>
+```
+
+##Public WN methods
+```js
+    WN.formatPrice();
+    WN.getArticlesPrices(); //useful at get prices for ajax loaded articles 
 ```
 
 ##Sample html list
