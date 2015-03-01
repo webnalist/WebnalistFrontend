@@ -38,20 +38,16 @@ WN.formatPrice();
 WN.getArticlesPrices(); //useful at get prices for ajax loaded articles 
 ```
 
-##Sandbox
+##Sandbox mode
+
+Self-hosted sandbox works with WebnalistBacked library.
+Sandbox mode is not communicated with Webnalist service.
+Remove sandbox option to enable production mode.
 ```js
 WN.options = {
     ...
-    sandbox: true
-    ...
-}
-
-//or
-
-WN.options = {
-    ...
     sandbox: {
-        url: 'http://example.com'
+        url: 'http://example.com' // path to your internal WebnalistBackend demo directory
     }
     ...
 }
