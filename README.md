@@ -20,7 +20,8 @@ https://webnalist.com
          articleUrlAttribute: 'data-wn-url',
          wrapperSelector: 'body',
          noPriceLabel: '--',
-         loadPrices: false //if true prices will be loading into wn-price
+         loadPrices: false //if true prices will be loading into wn-price,
+         sandbox: false
     };
 </script>
 ```
@@ -44,7 +45,6 @@ WN.getArticlesPrices(); //useful at get prices for ajax loaded articles
 
 Self-hosted sandbox works with WebnalistBacked library.
 Sandbox mode is not communicated with Webnalist service.
-Remove sandbox option to enable production mode.
 ```js
 WN.options = {
     ...
