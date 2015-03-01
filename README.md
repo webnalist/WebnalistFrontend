@@ -28,7 +28,7 @@ https://webnalist.com
 ##Embedding code
 At the and of your html file, before `body` ending tag and after `WN.options` script (if options needed).
 ```js
-<script src="../webnalist.min.js"></script>
+<script src="path/to/webnalist.min.js"></script>
 ```
 
 ##Public WN methods
