@@ -33,8 +33,27 @@ At the and of your html file, before `body` ending tag and after `WN.options` sc
 
 ##Public WN methods
 ```js
-    WN.formatPrice();
-    WN.getArticlesPrices(); //useful at get prices for ajax loaded articles 
+WN.formatPrice();
+WN.getArticlesPrices(); //useful at get prices for ajax loaded articles 
+```
+
+##Sandbox
+```js
+WN.options = {
+    ...
+    sandbox: true
+    ...
+}
+
+//or
+
+WN.options = {
+    ...
+    sandbox: {
+        url: 'http://example.com'
+    }
+    ...
+}
 ```
 
 ##Sample html list
