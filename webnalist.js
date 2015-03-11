@@ -314,7 +314,7 @@ WN = (function (window, document, app) {
 
     function showArticlePrices(data) {
         for (var url in data) {
-            var selector = options.articleItemSelector + ' [' + options.articleUrlAttribute + '="' + url + '"]';
+            var selector = options.articleItemSelector + '[' + options.articleUrlAttribute + '="' + url + '"]';
             qsa(selector + ':not(.' + options.articleItemLoadedClass + ')').forEach(function (item) {
                 $addClass(item, options.articleItemLoadedClass);
                 var priceItem = qs(options.priceSelector, item);
