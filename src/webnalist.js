@@ -144,6 +144,9 @@ WN = (function (window, document, app) {
                 'left=' + left
             ];
             openedWindow = window.open(url, null, windowOpts.join(','));
+            if (!openedWindow || openedWindow.closed || typeof openedWindow.closed == 'undefined') {
+                window.location.href = url;
+            }
             openedWindow.focus();
         });
     }
