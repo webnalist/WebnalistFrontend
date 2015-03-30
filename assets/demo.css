@@ -1,0 +1,14 @@
+.container {
+    width: 640px;
+    margin: auto;
+    font: 14px/180% Helvetica Neue, Helvetica, Arial;
+}
+
+.container ul {
+    padding: 0;
+}
+
+.container li {
+    padding: 20px 0;
+    list-style: none;
+}

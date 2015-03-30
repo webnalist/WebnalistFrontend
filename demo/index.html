@@ -3,34 +3,50 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Webnalist Merchant Demo Store</title>
+    <link rel="stylesheet" href="../assets/wn-badge.css">
+    <link rel="stylesheet" href="../assets/demo.css">
 </head>
 <body>
+<div class="container">
+    <h1>Webnalist Merchant Demo Store</h1>
+    <ul>
+        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=1">
+            <h2>„Mój kot też kupuje teksty w systemie Webnalist” - mówi Pani Jadwiga, właścicielka oczytanego Puszka</h2>
 
-<h1>Webnalist Merchant Demo Store</h1>
-<ul>
-    <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=1">
-        <a href="#">
-            Article #1 Title <em>Price: <span class="wn-price">...</span> zł</em>
-        </a>
-    </li>
-    <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=2">
-        <a href="#">
-            Article #3 Title <em>Price: <span class="wn-price">...</span> zł</em>
-        </a>
-    </li>
-    <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=3">
-        <a href="#">
-            Article #3 Title <em>Price: <span class="wn-price">...</span> zł</em>
-        </a>
-    </li>
-</ul>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ligula vel finibus tempor.
+                Vestibulum viverra et lacus nec fermentum. Pellentesque semper sollicitudin quam, vel sagittis diam
+                maximus blandit. Nulla semper consectetur euismod. </p>
+            <a class="wn-price-container-16" href="#"><span>Przeczytaj za <strong
+                    class="wn-price">...</strong> zł</span></a>
+        </li>
+        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=2">
+            <h2>Spółka Webnalist zakłada oddział na Marsie</h2>
 
-<a href="#" class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=1">Or simple read article #1 &raquo;</a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ligula vel finibus tempor.
+                Vestibulum viverra et lacus nec fermentum. Pellentesque semper sollicitudin quam, vel sagittis diam
+                maximus blandit. Nulla semper consectetur euismod. </p>
+            <a class="wn-price-container-24" href="#"><span>Przeczytaj za <strong
+                    class="wn-price">...</strong> zł</span></a>
+        </li>
+        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=3">
+            <h2>"Wszystko zaczęło się od czekolady" - twórcy Webnalist opowiadają o początkach działalności</h2>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ligula vel finibus tempor.
+                Vestibulum viverra et lacus nec fermentum. Pellentesque semper sollicitudin quam, vel sagittis diam
+                maximus blandit. Nulla semper consectetur euismod. </p>
+            <a class="wn-price-container-30" href="#"><span>Przeczytaj za <strong
+                    class="wn-price">...</strong> zł</span></a>
+        </li>
+    </ul>
+<a href="#" class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=1">Szybki link do artykułu
+    #1 &raquo;</a>
+</div>
 
 <script>
     var WN = WN || {};
     WN.options = {
-        loadPrices: true
+        loadPrices: true,
+        sandbox:  false
     };
 </script>
 <script src="../webnalist.js"></script>
