@@ -10,8 +10,8 @@
 <div class="container">
     <h1>Webnalist Merchant Demo Store</h1>
     <ul>
-        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=3">
-            <h2>Artykuł #1</h2>
+        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=1">
+            <h2>„Mój kot też kupuje teksty w systemie Webnalist” - mówi Pani Jadwiga, właścicielka oczytanego Puszka</h2>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ligula vel finibus tempor.
                 Vestibulum viverra et lacus nec fermentum. Pellentesque semper sollicitudin quam, vel sagittis diam
@@ -19,8 +19,8 @@
             <a class="wn-price-container-16" href="#"><span>Przeczytaj za <strong
                     class="wn-price">...</strong> zł</span></a>
         </li>
-        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=3">
-            <h2>Artykuł #2</h2>
+        <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=2">
+            <h2>Spółka Webnalist zakłada oddział na Marsie</h2>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ligula vel finibus tempor.
                 Vestibulum viverra et lacus nec fermentum. Pellentesque semper sollicitudin quam, vel sagittis diam
@@ -29,7 +29,7 @@
                     class="wn-price">...</strong> zł</span></a>
         </li>
         <li class="wn-item" data-wn-url="http://demo.webnalist.com/article.php?id=3">
-            <h2>Artykuł #3</h2>
+            <h2>"Wszystko zaczęło się od czekolady" - twórcy Webnalist opowiadają o początkach działalności</h2>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed malesuada ligula vel finibus tempor.
                 Vestibulum viverra et lacus nec fermentum. Pellentesque semper sollicitudin quam, vel sagittis diam
@@ -45,7 +45,10 @@
 <script>
     var WN = WN || {};
     WN.options = {
-        loadPrices: true
+        loadPrices: true,
+        sandbox: {
+            'url': 'http://demo.webnalist.com'
+        }
     };
 </script>
 <script src="../webnalist.js"></script>
