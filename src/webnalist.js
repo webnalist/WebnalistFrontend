@@ -122,33 +122,68 @@ WN = (function (window, document, app) {
     };
 
     function handleArticleOnClick() {
-        $live(options.articleItemSelector, 'click', function (e) {
-            var wn_url = e.target.closest(options.articleItemSelector).getAttribute(options.articleUrlAttribute);
-            var w = 360;
-            var h = 440;
-            var left = (screen.width / 2) - (w / 2);
-            var top = (screen.height / 2) - (h / 2);
-            var url = options.readArticleUrl + '?url=' + encodeURIComponent(wn_url);
-            var windowOpts = [
-                'toolbar=no',
-                'location=no',
-                'directories=no',
-                'status=no',
-                'menubar=no',
-                'scrollbars=yes',
-                'resizable=no',
-                'copyhistory=no',
-                'width=' + w,
-                'height=' + h,
-                'top=' + top,
-                'left=' + left
-            ];
-            openedWindow = window.open(url, null, windowOpts.join(','));
-            //new window blocker detector
-            if (!openedWindow || openedWindow.closed || typeof openedWindow.closed == 'undefined') {
-                window.location.href = url;
+        var eventType = 'click',
+            touchStarted = false,
+            currX = 0,
+            currY = 0,
+            cachedX = 0,
+            cachedY = 0,
+            getPointerEvent = function (event) {
+                return event.targetTouches ? event.targetTouches[0] : event;
+            },
+            action = function (e) {
+                var wn_url = e.target.closest(options.articleItemSelector).getAttribute(options.articleUrlAttribute);
+                var w = 360;
+                var h = 440;
+                var left = (screen.width / 2) - (w / 2);
+                var top = (screen.height / 2) - (h / 2);
+                var url = options.readArticleUrl + '?url=' + encodeURIComponent(wn_url);
+                var windowOpts = [
+                    'toolbar=no',
+                    'location=no',
+                    'directories=no',
+                    'status=no',
+                    'menubar=no',
+                    'scrollbars=yes',
+                    'resizable=no',
+                    'copyhistory=no',
+                    'width=' + w,
+                    'height=' + h,
+                    'top=' + top,
+                    'left=' + left
+                ];
+                openedWindow = window.open(url, null, windowOpts.join(','));
+                //new window blocker detector
+                if (!openedWindow || openedWindow.closed || typeof openedWindow.closed == 'undefined') {
+                    window.location.href = url;
+                }
+                openedWindow.focus();
+            };
+        if (navigator.userAgent.match(/iPhone/i)) {
+            eventType = 'touchstart';
+            $on(document.body, 'touchend', function () {
+                touchStarted = false;
+            });
+            $on(document.body, 'touchmove', function (e) {
+                var pointer = getPointerEvent(e);
+                currX = pointer.pageX;
+                currY = pointer.pageY;
+            });
+        }
+        $live(options.articleItemSelector, eventType, function (e) {
+            if (eventType === 'touchstart') {
+                var pointer = getPointerEvent(e);
+                cachedX = currX = pointer.pageX;
+                cachedY = currY = pointer.pageY;
+                touchStarted = true;
+                setTimeout(function () {
+                    if ((cachedX === currX) && !touchStarted && (cachedY === currY)) {
+                        action(e);
+                    }
+                }, 200);
+            } else {
+                action(e);
             }
-            openedWindow.focus();
         });
     }
 
