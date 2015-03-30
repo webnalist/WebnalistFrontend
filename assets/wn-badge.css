@@ -1,0 +1,75 @@
+.wn-item{
+    cursor: pointer;
+}
+
+.wn-price-container-16 {
+    background: url('images/webnalist_price_bg_16.png') top left no-repeat;
+    display: inline-block;
+    max-width: 400px;
+    height: 16px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 10px;
+    line-height: 10px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #dadada;
+}
+
+.wn-price-container-16 span {
+    padding: 2px 5px 0 5px;
+    background: #232b2d;
+    height: 14px;
+    display: inline-block;
+    margin-left: 60px;
+}
+
+.wn-price-container-24 {
+    background: url('images/webnalist_price_bg_24.png') top left no-repeat;
+    display: inline-block;
+    max-width: 400px;
+    height: 24px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 12px;
+    line-height: 12px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 3px;
+    border: 1px solid #dadada;
+}
+
+.wn-price-container-24 span {
+    padding: 6px 10px 0 10px;
+    background: #232b2d;
+    height: 19px;
+    display: inline-block;
+    margin-left: 90px;
+}
+
+.wn-price-container-30 {
+    background: url('images/webnalist_price_bg_30.png') top left no-repeat;
+    display: inline-block;
+    max-width: 400px;
+    height: 30px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    text-decoration: none;
+    border-radius: 5px;
+    border: 1px solid #dadada;
+}
+
+.wn-price-container-30 span {
+    padding: 8px 10px 0 10px;
+    background: #232b2d;
+    height: 25px;
+    display: inline-block;
+    margin-left: 110px;
+}
