@@ -146,6 +146,7 @@ WN = (function (window, document, app) {
         $live = (function () {
             var eventRegistry = {},
                 dispatchEvent = function (event) {
+                    event.preventDefault();
                     var targetElement = event.target;
                     eventRegistry[event.type].forEach(function (entry) {
                         var potentialElements = qsa(entry.selector);
@@ -265,7 +266,8 @@ WN = (function (window, document, app) {
                 return event.targetTouches ? event.targetTouches[0] : event;
             },
             action = function (e) {
-                var wn_url = e.target.closest(options.articleItemSelector).getAttribute(options.articleUrlAttribute);
+                var item = e.target.closest(options.articleItemSelector);
+                var wn_url = item.getAttribute(options.articleUrlAttribute) || item.getAttribute('href');
                 var w = 360;
                 var h = 440;
                 var left = (screen.width / 2) - (w / 2);
