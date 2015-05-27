@@ -78,7 +78,7 @@ Pay attention to: class="wn-item", class="wn-price", data-wn-url="..."
 </div>
 
 <!--Simple usage-->
-<a href="#" class="wn-item" data-wn-url="http://yourWebsite/yourArticle/1">
+<a href="http://yourWebsite/yourArticle/1" class="wn-item">
     Read with Webnalist &raquo;
 </a>
 ```
