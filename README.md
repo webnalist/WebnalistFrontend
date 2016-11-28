@@ -6,6 +6,10 @@ User don't need to be logged in Merchant service.
 
 https://webnalist.com
 
+# Abandoned
+This solution is no longer supported in current API.
+
+
 ##Optional advanced settings
 ```js
 <script>
